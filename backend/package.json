@@ -1,0 +1,43 @@
+{
+  "name": "secofrate-investigations-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Secofrate Investigations - Security & Intelligence Case Management System | Sheria Kwa Wote",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "db:migrate": "node migrations/run.js",
+    "db:seed": "node migrations/seed.js"
+  },
+  "keywords": [
+    "security",
+    "investigations",
+    "forensics",
+    "surveillance",
+    "private-detective",
+    "case-management"
+  ],
+  "author": "Secofrate Investigations Bureau",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.10.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.0.0",
+    "joi": "^17.10.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    
+    "pg": "^8.11.3",
+    "pg-pool": "^3.6.1",
+    "resend": "^6.12.4",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
