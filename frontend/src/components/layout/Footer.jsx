@@ -1,7 +1,23 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FaShieldAlt, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 const Footer = () => {
+  const operations = [
+    'Surveillance Services',
+    'Forensic Lab',
+    'Background Checks',
+    'Corporate Security',
+  ]
+
+  const quickLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'About Secofrate', path: '/about' },
+    { label: 'All Capabilities', path: '/services' },
+    { label: 'Secure Contact', path: '/contact' },
+    { label: 'Admin Access', path: '/admin/login' },
+  ]
+
   return (
     <footer className="bg-white text-sic-black border-t border-sic-red/30 pt-12 pb-6 px-4">
       <div className="max-w-[1400px] mx-auto">
@@ -23,20 +39,26 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-sm tracking-wider mb-4">OPERATIONS</h4>
             <ul className="space-y-2 text-sm text-sic-silver">
-              <li><a href="#" className="hover:text-sic-red transition">Surveillance Services</a></li>
-              <li><a href="#" className="hover:text-sic-red transition">Forensic Lab</a></li>
-              <li><a href="#" className="hover:text-sic-red transition">Background Checks</a></li>
-              <li><a href="#" className="hover:text-sic-red transition">Corporate Security</a></li>
+              {operations.map((operation) => (
+                <li key={operation}>
+                  <Link to="/services" className="hover:text-sic-red transition">
+                    {operation}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-sm tracking-wider mb-4">LEGAL</h4>
+            <h4 className="font-bold text-sm tracking-wider mb-4">QUICK LINKS</h4>
             <ul className="space-y-2 text-sm text-sic-silver">
-              <li><a href="#" className="hover:text-sic-red transition">Privacy Protocol</a></li>
-              <li><a href="#" className="hover:text-sic-red transition">Terms of Engagement</a></li>
-              <li><a href="#" className="hover:text-sic-red transition">Data Protection</a></li>
-              <li><a href="#" className="hover:text-sic-red transition">Client Confidentiality</a></li>
+              {quickLinks.map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path} className="hover:text-sic-red transition">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
