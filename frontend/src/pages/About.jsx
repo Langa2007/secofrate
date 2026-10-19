@@ -1,13 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaShieldAlt, FaAward, FaUsers, FaGlobe } from 'react-icons/fa'
+import { FaShieldAlt, FaAward, FaUsers, FaMapMarkedAlt } from 'react-icons/fa'
 
 const About = () => {
   const stats = [
     { icon: FaShieldAlt, value: '15+', label: 'Years of Service' },
     { icon: FaAward, value: '100%', label: 'Confidentiality Rate' },
     { icon: FaUsers, value: '847', label: 'Cases Solved' },
-    { icon: FaGlobe, value: '12+', label: 'Countries Covered' }
+    { icon: FaMapMarkedAlt, value: '34', label: 'Counties Served' }
   ]
 
   return (
@@ -51,7 +51,7 @@ const About = () => {
             <h2 className="text-2xl font-bold mb-4">Our Mandate</h2>
             <p className="text-sic-silver leading-relaxed mb-4">
               Operating under strict legal frameworks, Secofrate provides intelligence services 
-              that adhere to both domestic and international regulations. Every investigation 
+              that adhere to Kenyan law and applicable local regulations. Every investigation 
               maintains chain-of-custody protocols and evidentiary standards.
             </p>
             <p className="text-sic-silver leading-relaxed">

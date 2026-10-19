@@ -23,12 +23,9 @@ const Footer = () => {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            {/* Footer Logo Placeholder */}
-            <div className="w-14 h-14 bg-sic-red flex items-center justify-center mb-4">
-              <span className="font-space font-bold text-sm tracking-wider">S.I.C</span>
-            </div>
-            {/* Uncomment below for actual logo */}
-            {/* <img src="/logo.png" alt="Secofrate" className="w-14 h-14 mb-4" /> */}
+            <Link to="/" className="inline-block mb-4">
+              <img src="/logo.png" alt="Secofrate Logo" className="w-14 h-14 object-contain" />
+            </Link>
             <p className="text-sic-silver text-sm italic mb-3">Sheria Kwa Wote - Justice for All</p>
             <div className="flex items-center gap-2 text-xs text-sic-gold">
               <FaShieldAlt />
@@ -68,8 +65,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-sm tracking-wider mb-4">CONTACT</h4>
             <ul className="space-y-2 text-sm text-sic-silver">
-              <li className="flex items-center gap-2"><FaPhone className="text-sic-red" /> +254 700 000 000</li>
-              <li className="flex items-center gap-2"><FaEnvelope className="text-sic-red" /> intel@secofrate.ci</li>
+              <li className="flex items-center gap-2"><FaPhone className="text-sic-red" /> +254 726846599</li>
+              <li className="flex items-center gap-2"><FaEnvelope className="text-sic-red" /> intel@secofrate.com</li>
               <li className="flex items-center gap-2"><FaMapMarkerAlt className="text-sic-red" /> Nairobi, Kenya</li>
             </ul>
           </div>

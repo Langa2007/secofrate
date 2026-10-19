@@ -1,7 +1,7 @@
 // src/pages/Services.jsx
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaSearch, FaShieldVirus, FaUserSecret, FaMicroscope, FaChartLine, FaGlobe } from 'react-icons/fa'
+import { FaSearch, FaShieldVirus, FaUserSecret, FaMicroscope, FaChartLine, FaMapMarkedAlt } from 'react-icons/fa'
 
 const services = [
   {
@@ -35,10 +35,10 @@ const services = [
     features: ['Security Audits', 'Threat Modeling', 'Crisis Planning']
   },
   {
-    icon: FaGlobe,
-    title: 'International Coverage',
-    description: 'Global investigation network spanning multiple jurisdictions.',
-    features: ['Cross-border Ops', 'Interpol Liaison', 'Extradition Support']
+    icon: FaMapMarkedAlt,
+    title: 'Kenya County Coverage',
+    description: 'Trusted investigative and security support delivered across Kenya, with operations active in 34 counties so far.',
+    features: ['34 Counties Served', 'County-Based Teams', 'Kenya-Wide Coordination']
   }
 ]
 

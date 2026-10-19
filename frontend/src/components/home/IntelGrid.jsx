@@ -20,13 +20,13 @@ const intelItems = [
     icon: FaBuilding,
     title: 'Corporate Espionage',
     description: 'Protecting trade secrets, investigating IP theft, and counter-intelligence operations.',
-    tags: ['NDA Protected', 'Global Reach']
+    tags: ['NDA Protected', 'Kenya-Wide Reach']
   },
   {
     icon: FaUserCheck,
     title: 'Background Operations',
     description: 'Comprehensive due diligence and personnel screening for organizations.',
-    tags: ['48hr Turnaround', 'Global Database']
+    tags: ['48hr Turnaround', 'County Intelligence']
   }
 ]
 
