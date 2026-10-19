@@ -1,9 +1,21 @@
 // src/pages/Services.jsx
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaSearch, FaShieldVirus, FaUserSecret, FaMicroscope, FaChartLine, FaMapMarkedAlt } from 'react-icons/fa'
+import { FaSearch, FaShieldVirus, FaUserSecret, FaMicroscope, FaChartLine, FaMapMarkedAlt, FaUserShield, FaBuilding } from 'react-icons/fa'
 
 const services = [
+  {
+    icon: FaUserShield,
+    title: 'Security Personnel',
+    description: 'Professional security personnel for personal protection, business needs and events, matched to each assignment.',
+    features: ['Personal Protection', 'Business Security', 'Event Security']
+  },
+  {
+    icon: FaBuilding,
+    title: 'Guarding Services',
+    description: 'On-site guarding to help protect people, premises and property, with coverage planned around your site and requirements.',
+    features: ['Premises Guarding', 'Access Awareness', 'Site-Based Coverage']
+  },
   {
     icon: FaSearch,
     title: 'Covert Operations',

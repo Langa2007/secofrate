@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
@@ -6,21 +6,10 @@ import {
   FaUserSecret,
   FaMicrochip,
   FaEnvelope,
-  FaLock,
 } from 'react-icons/fa'
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const navLinks = [
     { path: '/', label: 'OPS CENTER', icon: FaShieldAlt },
@@ -100,25 +89,6 @@ const Navbar = () => {
 
         </div>
 
-        {/* Security Status */}
-        <div className="hidden lg:flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="font-inter text-[10px] font-bold tracking-[1px] text-sic-silver">
-              SECURE CHANNEL
-            </span>
-          </div>
-
-          <div className="flex items-center gap-1 text-sic-gold">
-            <FaLock className="text-[10px]" />
-            <span className="font-mono text-[9px] tracking-wider">
-              AES-256
-            </span>
-          </div>
-        </div>
       </div>
     </motion.nav>
   )

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { FaArrowRight, FaDatabase, FaSkull } from 'react-icons/fa'
+import { FaArrowRight, FaDatabase, FaBinoculars } from 'react-icons/fa'
 import CyberButton from '../ui/CyberButton'
 import AnimatedCounter from '../ui/AnimatedCounter'
 
@@ -44,8 +44,8 @@ const HeroSection = () => {
         >
           {/* Agency Badge */}
           <motion.div variants={itemVariants} className="inline-flex gap-4 bg-white px-4 py-2 border-l-3 border-sic-red mb-8">
-            <span className="text-[11px] font-bold tracking-[3px] text-sic-silver">CLASSIFIED</span>
-            <span className="text-[11px] font-bold tracking-[3px] text-sic-red">LEVEL 3 CLEARANCE REQUIRED</span>
+            <span className="text-[11px] font-bold tracking-[3px] text-sic-silver">PRIVATE SECURITY</span>
+            <span className="text-[11px] font-bold tracking-[3px] text-sic-red">PROTECTION · INTELLIGENCE · INVESTIGATIONS</span>
           </motion.div>
 
           {/* Main Title */}
@@ -61,7 +61,7 @@ const HeroSection = () => {
           {/* Divider */}
           <motion.div variants={itemVariants} className="flex items-center gap-4 my-8">
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-sic-red"></div>
-            <FaSkull className="text-sic-red text-lg" />
+            <FaBinoculars className="text-sic-red text-lg" />
             <div className="w-16 h-px bg-gradient-to-l from-transparent to-sic-red"></div>
           </motion.div>
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
             <CyberButton variant="primary" onClick={() => navigate('/contact')}>
               INITIATE CONTACT <FaArrowRight className="ml-2" />
             </CyberButton>
-            <CyberButton variant="secondary" onClick={() => window.location.href = '/services'}>
+            <CyberButton variant="secondary" onClick={() => navigate('/services')}>
               VIEW CAPABILITIES <FaDatabase className="ml-2" />
             </CyberButton>
           </motion.div>
