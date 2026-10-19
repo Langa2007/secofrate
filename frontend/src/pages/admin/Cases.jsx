@@ -62,7 +62,7 @@ const AdminCases = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => navigate('/admin/dashboard')}
-              className="flex items-center gap-2 text-sic-silver hover:text-white transition"
+              className="flex items-center gap-2 text-sic-silver hover:text-sic-red transition"
             >
               <FaArrowLeft />
               <span>Back</span>

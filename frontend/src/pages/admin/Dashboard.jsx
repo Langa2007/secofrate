@@ -50,7 +50,7 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-sic-dark">
       {/* Admin Navbar */}
-      <nav className="bg-black border-b border-sic-red/30 px-6 py-4">
+      <nav className="bg-white border-b border-sic-red/30 px-6 py-4">
         <div className="max-w-[1400px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-sic-red rounded flex items-center justify-center">

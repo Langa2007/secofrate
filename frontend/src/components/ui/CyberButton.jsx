@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const CyberButton = ({ children, variant = 'primary', onClick, className = '' }) => {
   const variants = {
-    primary: 'bg-gradient-to-r from-sic-red to-[#32164a] text-white border-none',
+    primary: 'bg-sic-red text-white border-none',
     secondary: 'bg-transparent border-2 border-sic-gold text-sic-gold',
     danger: 'bg-transparent border-2 border-sic-red text-sic-red',
   }

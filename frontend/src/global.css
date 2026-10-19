@@ -13,7 +13,7 @@
 
   body {
     background-color: #ffffff;
-    color: #17131d;
+    color: #211914;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
@@ -25,16 +25,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #f6f4fa;
+    background: #ffffff;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #5b2a86;
+    background: #4b2e24;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #7c3aad;
+    background: #765244;
   }
 }
 
@@ -59,18 +59,18 @@
     height: 100%;
     pointer-events: none;
     z-index: 9998;
-    background: linear-gradient(to bottom, transparent 50%, rgba(91, 42, 134, 0.08) 50%);
+    background: linear-gradient(to bottom, transparent 50%, rgba(75, 46, 36, 0.05) 50%);
     background-size: 100% 4px;
     animation: scan 8s linear infinite;
     opacity: 0.08;
   }
 
   .glow-text {
-    text-shadow: 0 0 10px rgba(91, 42, 134, 0.5);
+    text-shadow: 0 0 10px rgba(75, 46, 36, 0.35);
   }
 
   .border-glow {
-    box-shadow: 0 0 15px rgba(91, 42, 134, 0.3);
+    box-shadow: 0 0 15px rgba(75, 46, 36, 0.25);
   }
 
   .card-hover {
@@ -79,8 +79,8 @@
   
   .card-hover:hover {
     transform: translateY(-5px);
-    border-color: #5b2a86;
-    box-shadow: 0 10px 30px rgba(91, 42, 134, 0.2);
+    border-color: #4b2e24;
+    box-shadow: 0 10px 30px rgba(75, 46, 36, 0.15);
   }
 }
 

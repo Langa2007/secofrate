@@ -33,7 +33,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen pt-32 pb-16 px-4 bg-gradient-tactical">
+    <div className="min-h-screen pt-32 pb-16 px-4 bg-white">
       <div className="max-w-[1400px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -176,7 +176,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-sic-red to-[#32164a] py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
+                className="w-full bg-sic-red text-white py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:bg-sic-red-glow hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
               >
                 <FaLock />
                 {isSubmitting ? 'ENCRYPTING & TRANSMITTING...' : 'ENCRYPT & SEND'}

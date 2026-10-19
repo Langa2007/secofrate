@@ -78,7 +78,7 @@ const AdminClients = () => {
           <div className="flex items-center gap-4">
             <button
               onClick={() => navigate('/admin/dashboard')}
-              className="flex items-center gap-2 text-sic-silver hover:text-white transition"
+              className="flex items-center gap-2 text-sic-silver hover:text-sic-red transition"
             >
               <FaArrowLeft />
               <span>Back</span>
@@ -94,7 +94,7 @@ const AdminClients = () => {
                 placeholder="Search clients..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-10 pr-4 py-2 bg-sic-charcoal border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                className="pl-10 pr-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
               />
             </div>
             <button
@@ -166,7 +166,7 @@ const AdminClients = () => {
                   placeholder="Full Name *"
                   value={formData.full_name}
                   onChange={(e) => setFormData({...formData, full_name: e.target.value})}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                   required
                 />
                 <input
@@ -174,7 +174,7 @@ const AdminClients = () => {
                   placeholder="National ID *"
                   value={formData.national_id}
                   onChange={(e) => setFormData({...formData, national_id: e.target.value})}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                   required
                 />
                 <input
@@ -182,21 +182,21 @@ const AdminClients = () => {
                   placeholder="Phone Number"
                   value={formData.phone_number}
                   onChange={(e) => setFormData({...formData, phone_number: e.target.value})}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                 />
                 <input
                   type="email"
                   placeholder="Email"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                 />
                 <input
                   type="text"
                   placeholder="Occupation"
                   value={formData.occupation}
                   onChange={(e) => setFormData({...formData, occupation: e.target.value})}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                 />
                 <label className="flex items-center gap-2">
                   <input
@@ -212,7 +212,7 @@ const AdminClients = () => {
                     placeholder="Corporate Name"
                     value={formData.corporate_name}
                     onChange={(e) => setFormData({...formData, corporate_name: e.target.value})}
-                    className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                    className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                   />
                 )}
                 <div className="flex gap-3 pt-4">

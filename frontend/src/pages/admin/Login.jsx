@@ -22,8 +22,7 @@ const AdminLogin = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-tactical">
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none"></div>
+    <div className="min-h-screen flex items-center justify-center px-4 bg-white">
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -32,7 +31,7 @@ const AdminLogin = () => {
       >
         <div className="text-center mb-8">
           {/* Logo Placeholder */}
-          <div className="w-20 h-20 bg-gradient-to-br from-sic-red to-[#32164a] rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-sic-gold">
+          <div className="w-20 h-20 bg-sic-red rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-sic-gold">
             <FaFingerprint className="text-3xl text-sic-gold" />
           </div>
           <h1 className="text-2xl font-bold">Secofrate Access Portal</h1>
@@ -51,7 +50,7 @@ const AdminLogin = () => {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                 placeholder="Enter credentials"
                 required
               />
@@ -68,7 +67,7 @@ const AdminLogin = () => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                className="w-full pl-10 pr-4 py-3 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                 placeholder="••••••••"
                 required
               />
@@ -78,7 +77,7 @@ const AdminLogin = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-sic-red to-[#32164a] py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
+            className="w-full bg-sic-red text-white py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:bg-sic-red-glow hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
           >
             <FaFingerprint />
             {loading ? 'VERIFYING...' : 'AUTHENTICATE'}

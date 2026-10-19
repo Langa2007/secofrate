@@ -10,12 +10,12 @@ export default {
       colors: {
         'sic-dark': '#ffffff',
         'sic-black': '#000000',
-        'sic-charcoal': '#f6f4fa',
-        'sic-red': '#5b2a86',
-        'sic-red-glow': '#7c3aad',
-        'sic-gold': '#6d4c9a',
-        'sic-silver': '#5f5a68',
-        'sic-gray': '#e3deeb',
+        'sic-charcoal': '#ffffff',
+        'sic-red': '#4b2e24',
+        'sic-red-glow': '#765244',
+        'sic-gold': '#806044',
+        'sic-silver': '#6b625c',
+        'sic-gray': '#e6dfda',
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],

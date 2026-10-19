@@ -29,9 +29,9 @@ const HeroSection = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-12 overflow-hidden bg-gradient-to-br from-sic-black via-[#1b1026] to-[#32164a] text-white">
+    <section className="relative min-h-screen flex items-center pt-32 pb-12 overflow-hidden bg-white">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none opacity-40"></div>
+      <div className="absolute inset-0 pointer-events-none"></div>
       
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 w-full" ref={ref}>
         <motion.div
@@ -41,17 +41,17 @@ const HeroSection = () => {
           className="max-w-4xl"
         >
           {/* Agency Badge */}
-          <motion.div variants={itemVariants} className="inline-flex gap-4 bg-black/50 backdrop-blur-sm px-4 py-2 border-l-3 border-sic-red mb-8">
+          <motion.div variants={itemVariants} className="inline-flex gap-4 bg-white px-4 py-2 border-l-3 border-sic-red mb-8">
             <span className="text-[11px] font-bold tracking-[3px] text-sic-silver">CLASSIFIED</span>
             <span className="text-[11px] font-bold tracking-[3px] text-sic-red">LEVEL 3 CLEARANCE REQUIRED</span>
           </motion.div>
 
           {/* Main Title */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-6">
-            <span className="block bg-gradient-to-r from-white to-sic-gold bg-clip-text text-transparent">
+            <span className="block text-sic-gold">
               INTELLIGENCE
             </span>
-            <span className="block text-sic-red drop-shadow-[0_0_15px_rgba(91,42,134,0.5)]">
+            <span className="block text-sic-red drop-shadow-[0_0_15px_rgba(75,46,36,0.35)]">
               BEYOND BOUNDARIES
             </span>
           </motion.h1>
@@ -102,7 +102,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="absolute bottom-0 right-0 bg-black/70 backdrop-blur-md p-6 border-t border-l border-sic-red hidden lg:block"
+          className="absolute bottom-0 right-0 bg-white p-6 border-t border-l border-sic-red hidden lg:block"
         >
           <div className="flex gap-8">
             <div className="text-center">

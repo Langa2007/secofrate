@@ -3,7 +3,7 @@ import { FaShieldAlt, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white border-t border-sic-red/30 pt-12 pb-6 px-4">
+    <footer className="bg-white text-sic-black border-t border-sic-red/30 pt-12 pb-6 px-4">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>

@@ -7,14 +7,14 @@ const ContactTrigger = () => {
   const navigate = useNavigate()
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-r from-sic-red to-[#32164a] text-white relative overflow-hidden">
+    <section className="py-16 px-4 bg-white text-sic-black border-y border-sic-red/20 relative overflow-hidden">
       <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(255,255,255,0.03)_20px,rgba(255,255,255,0.03)_40px)]"></div>
       
       <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <h3 className="text-2xl md:text-3xl font-bold mb-2">Need Immediate Assistance?</h3>
-            <p className="text-white/80">Emergency response team available 24/7 for critical situations</p>
+            <p className="text-sic-silver">Emergency response team available 24/7 for critical situations</p>
           </div>
           
           <motion.button
