@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaEye, FaFingerprint, FaBuilding, FaUserCheck } from 'react-icons/fa'
-import GlowCard from '../ui/GlowCard'
+import GlowCard from '../ui/Glowcard'
 
 const intelItems = [
   {
