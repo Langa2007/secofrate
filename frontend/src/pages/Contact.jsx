@@ -67,7 +67,7 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-2xl text-sic-red" />
                 <div>
                   <h3 className="font-bold text-sm tracking-wide">HEADQUARTERS</h3>
-                  <p className="text-sic-silver text-sm">Nairobi, Kenya
+                  <p className="text-sic-silver text-sm">Nairobi, Kenya <br />
                     AGA KHAN WALK - City Square
                   </p>
                 </div>

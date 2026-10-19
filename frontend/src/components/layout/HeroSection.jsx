@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { FaArrowRight, FaDatabase, FaSkull } from 'react-icons/fa'
 import CyberButton from '../ui/CyberButton'
 import AnimatedCounter from '../ui/AnimatedCounter'
 
 const HeroSection = () => {
+  const navigate = useNavigate()
   const controls = useAnimation()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true })
@@ -72,7 +74,7 @@ const HeroSection = () => {
 
           {/* Action Buttons */}
           <motion.div variants={itemVariants} className="flex gap-4 mb-12 flex-wrap">
-            <CyberButton variant="primary" onClick={() => window.location.href = '/contact'}>
+            <CyberButton variant="primary" onClick={() => navigate('/contact')}>
               INITIATE CONTACT <FaArrowRight className="ml-2" />
             </CyberButton>
             <CyberButton variant="secondary" onClick={() => window.location.href = '/services'}>
