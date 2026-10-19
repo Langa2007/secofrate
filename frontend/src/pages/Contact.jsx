@@ -53,21 +53,23 @@ const Contact = () => {
                 <FaPhoneAlt className="text-2xl text-sic-red" />
                 <div>
                   <h3 className="font-bold text-sm tracking-wide">EMERGENCY HOTLINE</h3>
-                  <p className="text-sic-silver text-sm">+254 704521408 (24/7 Ops Center)</p>
+                  <p className="text-sic-silver text-sm">+254 726846599 (24/7 Ops Center)</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-sic-charcoal/30 border-l-3 border-sic-red">
                 <FaEnvelope className="text-2xl text-sic-red" />
                 <div>
                   <h3 className="font-bold text-sm tracking-wide">INTELLIGENCE COMMS</h3>
-                  <p className="text-sic-silver text-sm">intel@secofrate.com | PGP Available</p>
+                  <p className="text-sic-silver text-sm">secofrate551@gmail| PGP Available</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 bg-sic-charcoal/30 border-l-3 border-sic-red">
                 <FaMapMarkerAlt className="text-2xl text-sic-red" />
                 <div>
                   <h3 className="font-bold text-sm tracking-wide">HEADQUARTERS</h3>
-                  <p className="text-sic-silver text-sm">Nairobi, Kenya (Disclosed upon clearance)</p>
+                  <p className="text-sic-silver text-sm">Nairobi, Kenya
+                    AGA KHAN WALK - City Square
+                  </p>
                 </div>
               </div>
             </div>

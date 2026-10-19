@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { FaShieldAlt, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
   const operations = [
     'Surveillance Services',
     'Forensic Lab',
@@ -77,7 +79,7 @@ const Footer = () => {
             S E C O F R A T E   I N T E L L I G E N C E   N E T W O R K
           </div>
           <div className="text-xs text-sic-silver">
-            &copy; 2026 Secofrate Investigations Bureau. All intelligence proprietary.
+            &copy; {currentYear} Secofrate Investigations Bureau. All intelligence proprietary.
           </div>
         </div>
       </div>
