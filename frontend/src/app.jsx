@@ -1,7 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import { AuthProvider } from './context/AuthContext'
 import Navbar from './components/layout/navbar'
 import Footer from './components/layout/Footer'
 import SecurityOverlay from './components/layout/Securityoverlay'
@@ -10,14 +9,10 @@ import About from './pages/About'
 import Services from './pages/Services'
 import SurveillanceServices from './pages/SurveillanceServices'
 import Contact from './pages/Contact'
-import AdminLogin from './pages/admin/Login'
-import AdminDashboard from './pages/admin/Dashboard'
-import AdminCases from './pages/admin/Cases'
-import AdminClients from './pages/admin/Clients'
 
 function App() {
   return (
-    <AuthProvider>
+    <>
       <SecurityOverlay />
       <Toaster 
         position="top-right"
@@ -67,13 +62,8 @@ function App() {
           </>
         } />
         
-        {/* Admin Routes */}
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/cases" element={<AdminCases />} />
-        <Route path="/admin/clients" element={<AdminClients />} />
       </Routes>
-    </AuthProvider>
+    </>
   )
 }
 

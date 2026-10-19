@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useAuth } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { useAuth } from '../context/AuthContext'
+import { useRouter } from 'next/router'
+import api from '../services/api'
 import { motion } from 'framer-motion'
 import { FaPlus, FaEye, FaArrowLeft, FaSearch } from 'react-icons/fa'
 
 const AdminClients = () => {
   const { isAuthenticated } = useAuth()
-  const navigate = useNavigate()
+  const router = useRouter()
   const [clients, setClients] = useState([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
@@ -24,16 +24,16 @@ const AdminClients = () => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate('/admin/login')
+      router.push('/login')
     } else {
       fetchClients()
     }
-  }, [isAuthenticated, navigate])
+  }, [isAuthenticated, router])
 
   const fetchClients = async () => {
     try {
-      const url = search ? `/api/clients?search=${search}` : '/api/clients'
-      const response = await axios.get(url)
+      const url = search ? `/clients?search=${encodeURIComponent(search)}` : '/clients'
+      const response = await api.get(url)
       setClients(response.data.clients || [])
     } catch (error) {
       console.error('Failed to fetch clients:', error)
@@ -52,7 +52,7 @@ const AdminClients = () => {
   const handleCreateClient = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/clients', formData)
+      await api.post('/clients', formData)
       setShowCreateModal(false)
       setFormData({
         full_name: '',
@@ -77,7 +77,7 @@ const AdminClients = () => {
         <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
           <div className="flex items-center gap-4">
             <button
-              onClick={() => navigate('/admin/dashboard')}
+              onClick={() => router.push('/dashboard')}
               className="flex items-center gap-2 text-sic-silver hover:text-sic-red transition"
             >
               <FaArrowLeft />

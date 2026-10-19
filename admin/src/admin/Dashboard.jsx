@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../../context/AuthContext'
+import { useRouter } from 'next/router'
+import { useAuth } from '../context/AuthContext'
 import { motion } from 'framer-motion'
 import { FaFolderOpen, FaUsers, FaFileAlt, FaSignOutAlt, FaChartLine } from 'react-icons/fa'
-import axios from 'axios'
+import api from '../services/api'
 
 const AdminDashboard = () => {
   const { user, logout, isAuthenticated } = useAuth()
-  const navigate = useNavigate()
+  const router = useRouter()
   const [stats, setStats] = useState({
     totalCases: 0,
     activeCases: 0,
@@ -17,23 +17,24 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate('/admin/login')
+      router.push('/login')
     } else {
       fetchStats()
     }
-  }, [isAuthenticated, navigate])
+  }, [isAuthenticated, router])
 
   const fetchStats = async () => {
     try {
-      const [casesRes, clientsRes] = await Promise.all([
-        axios.get('/api/cases'),
-        axios.get('/api/clients')
+      const [casesRes, clientsRes, contactRes] = await Promise.all([
+        api.get('/cases'),
+        api.get('/clients'),
+        api.get('/contact/submissions')
       ])
       setStats({
         totalCases: casesRes.data.total || 0,
         activeCases: casesRes.data.cases?.filter(c => c.status === 'Open').length || 0,
         totalClients: clientsRes.data.total || 0,
-        pendingReports: 0
+        pendingReports: contactRes.data.submissions?.filter(item => item.status === 'Pending').length || 0
       })
     } catch (error) {
       console.error('Failed to fetch stats:', error)
@@ -44,6 +45,7 @@ const AdminDashboard = () => {
     { icon: FaFolderOpen, label: 'Case Management', path: '/admin/cases', color: 'text-sic-red' },
     { icon: FaUsers, label: 'Client Registry', path: '/admin/clients', color: 'text-sic-gold' },
     { icon: FaFileAlt, label: 'Reports', path: '/admin/reports', color: 'text-sic-silver' },
+    { icon: FaFileAlt, label: 'Contact Inbox', path: '/admin/contact', color: 'text-sic-gold' },
     { icon: FaChartLine, label: 'Analytics', path: '/admin/analytics', color: 'text-sic-red' },
   ]
 
@@ -130,7 +132,7 @@ const AdminDashboard = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 + index * 0.1 }}
-              onClick={() => navigate(item.path)}
+              onClick={() => router.push(item.path.replace('/admin', ''))}
               className="bg-sic-charcoal/30 border border-sic-gray p-6 text-center hover:border-sic-red transition-all group"
             >
               <item.icon className={`text-3xl mx-auto mb-3 ${item.color} group-hover:scale-110 transition`} />

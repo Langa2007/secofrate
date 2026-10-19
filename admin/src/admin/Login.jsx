@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import { useAuth } from '../../context/AuthContext'
+import { useAuth } from '../context/AuthContext'
 import { FaFingerprint, FaUser, FaLock } from 'react-icons/fa'
 
 const AdminLogin = () => {
@@ -9,7 +9,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const { login } = useAuth()
-  const navigate = useNavigate()
+  const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -17,7 +17,7 @@ const AdminLogin = () => {
     const success = await login(username, password)
     setLoading(false)
     if (success) {
-      navigate('/admin/dashboard')
+      router.push('/dashboard')
     }
   }
 

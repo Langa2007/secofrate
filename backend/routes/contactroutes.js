@@ -1,6 +1,7 @@
 import express from 'express';
 import { query } from '../config/database.js';
 import { validateContact } from '../middleware/validation.js';
+import { authenticateToken, requireSecurityLevel, auditLog } from '../middleware/auth.js';
 import crypto from 'crypto';
 import { Resend } from 'resend';
 
@@ -43,6 +44,51 @@ router.post('/submit', validateContact, async (req, res) => {
           <p style="font-size: 12px; color: #666;">This is an automated confirmation. Please do not reply directly to this email.</p>
         </div>
       `
+    });
+
+    router.get('/submissions', authenticateToken, requireSecurityLevel(1), auditLog, async (req, res) => {
+      try {
+        const result = await query(
+          `SELECT id, reference_number, full_name, email, phone, subject, message,
+                  is_urgent, status, created_at, responded_at
+           FROM contact_submissions
+           ORDER BY is_urgent DESC, created_at DESC
+           LIMIT 200`
+        );
+
+        res.json({ total: result.rows.length, submissions: result.rows });
+      } catch (error) {
+        console.error('Contact submissions fetch error:', error);
+        res.status(500).json({ error: 'Failed to retrieve contact submissions', code: 'CNT_004' });
+      }
+    });
+
+    router.patch('/submissions/:id/status', authenticateToken, requireSecurityLevel(2), auditLog, async (req, res) => {
+      const validStatuses = ['Pending', 'In Progress', 'Resolved', 'Closed'];
+      const { status } = req.body;
+
+      if (!validStatuses.includes(status)) {
+        return res.status(400).json({ error: 'Invalid submission status', code: 'CNT_005' });
+      }
+
+      try {
+        const result = await query(
+          `UPDATE contact_submissions
+           SET status = $1, responded_at = CASE WHEN $1 IN ('Resolved', 'Closed') THEN CURRENT_TIMESTAMP ELSE responded_at END
+           WHERE id = $2
+           RETURNING id, status, responded_at`,
+          [status, req.params.id]
+        );
+
+        if (result.rows.length === 0) {
+          return res.status(404).json({ error: 'Contact submission not found', code: 'CNT_006' });
+        }
+
+        res.json({ message: 'Contact submission status updated', submission: result.rows[0] });
+      } catch (error) {
+        console.error('Contact submission status error:', error);
+        res.status(500).json({ error: 'Failed to update contact submission', code: 'CNT_007' });
+      }
     });
 
     res.status(201).json({
