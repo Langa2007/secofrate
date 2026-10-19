@@ -41,7 +41,10 @@ const Footer = () => {
             <ul className="space-y-2 text-sm text-sic-silver">
               {operations.map((operation) => (
                 <li key={operation}>
-                  <Link to="/services" className="hover:text-sic-red transition">
+                  <Link
+                    to={operation === 'Surveillance Services' ? '/services/surveillance' : '/services'}
+                    className="hover:text-sic-red transition"
+                  >
                     {operation}
                   </Link>
                 </li>

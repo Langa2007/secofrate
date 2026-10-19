@@ -8,6 +8,7 @@ import SecurityOverlay from './components/layout/Securityoverlay'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
+import SurveillanceServices from './pages/SurveillanceServices'
 import Contact from './pages/Contact'
 import AdminLogin from './pages/admin/Login'
 import AdminDashboard from './pages/admin/Dashboard'
@@ -48,6 +49,13 @@ function App() {
           <>
             <Navbar />
             <Services />
+            <Footer />
+          </>
+        } />
+        <Route path="/services/surveillance" element={
+          <>
+            <Navbar />
+            <SurveillanceServices />
             <Footer />
           </>
         } />
