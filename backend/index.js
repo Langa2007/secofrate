@@ -12,6 +12,10 @@ import contactRoutes from './routes/contactroutes.js';
 
 dotenv.config();
 
+if (!process.env.JWT_SECRET) {
+  throw new Error('JWT_SECRET is required. Set it in the Render environment variables.');
+}
+
 const app = express();
 
 app.use(helmet({
@@ -26,8 +30,30 @@ app.use(helmet({
   },
 }));
 
+const normalizeOrigin = (value) => {
+  try {
+    return new URL(value.trim()).origin;
+  } catch {
+    return value.trim().replace(/\/$/, '');
+  }
+};
+
+const allowedOrigins = new Set([
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'http://localhost:5173',
+  'http://localhost:5500',
+  ...(process.env.FRONTEND_URL || '').split(','),
+  ...(process.env.ADMIN_URL || '').split(','),
+].map(normalizeOrigin).filter(Boolean));
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173', 'http://localhost:5500'],
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.has(normalizeOrigin(origin))) {
+      return callback(null, true);
+    }
+    return callback(new Error('Origin is not allowed by CORS'));
+  },
   credentials: true,
 }));
 

@@ -2,7 +2,7 @@ import express from 'express';
 import { query } from '../config/database.js';
 import { authenticateToken, requireSecurityLevel, auditLog } from '../middleware/auth.js';
 import { validateCase } from '../middleware/validation.js';
-import { CaseModel } from '../models/Casemodel.js';
+import { CaseModel } from '../models/casemodel.js';
 import crypto from 'crypto';
 
 const router = express.Router();

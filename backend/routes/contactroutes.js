@@ -14,7 +14,7 @@ const generateReferenceNumber = () => {
   return `${prefix}-${timestamp}-${random}`;
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 router.post('/submit', validateContact, async (req, res) => {
   try {
@@ -27,24 +27,33 @@ router.post('/submit', validateContact, async (req, res) => {
       [referenceNumber, req.body.full_name, req.body.email, req.body.phone, req.body.subject, req.body.message, req.body.is_urgent || false]
     );
 
-    await resend.emails.send({
-      from: `Secofrate Investigations <${process.env.EMAIL_USER}>`,
-      to: req.body.email,
-      subject: `Secofrate - We received your inquiry (Ref: ${referenceNumber})`,
-      html: `
-        <div style="font-family: 'Courier New', monospace; border-left: 4px solid #8B0000; padding: 20px; background: #f5f5f5;">
-          <h2 style="color: #2C2C2C;">Secofrate Investigations Bureau</h2>
-          <p style="font-style: italic;">Sheria Kwa Wote - Justice for All</p>
-          <hr>
-          <p>Dear ${req.body.full_name},</p>
-          <p>Your inquiry has been received and registered under reference number: <strong>${referenceNumber}</strong></p>
-          <p>Our team will review your matter and respond within 24-48 business hours.</p>
-          <p>For urgent matters, please call our emergency line: +254 XXX XXX XXX</p>
-          <hr>
-          <p style="font-size: 12px; color: #666;">This is an automated confirmation. Please do not reply directly to this email.</p>
-        </div>
-      `
-    });
+    const emailFrom = process.env.EMAIL_FROM || process.env.EMAIL_USER;
+    if (resend && emailFrom) {
+      try {
+        await resend.emails.send({
+          from: `Secofrate Investigations <${emailFrom}>`,
+          to: req.body.email,
+          subject: `Secofrate - We received your inquiry (Ref: ${referenceNumber})`,
+          html: `
+            <div style="font-family: 'Courier New', monospace; border-left: 4px solid #8B0000; padding: 20px; background: #f5f5f5;">
+              <h2 style="color: #2C2C2C;">Secofrate Investigations Bureau</h2>
+              <p style="font-style: italic;">Sheria Kwa Wote - Justice for All</p>
+              <hr>
+              <p>Dear ${req.body.full_name},</p>
+              <p>Your inquiry has been received and registered under reference number: <strong>${referenceNumber}</strong></p>
+              <p>Our team will review your matter and respond within 24-48 business hours.</p>
+              <p>For urgent matters, please call our emergency line: +254 XXX XXX XXX</p>
+              <hr>
+              <p style="font-size: 12px; color: #666;">This is an automated confirmation. Please do not reply directly to this email.</p>
+            </div>
+          `
+        });
+      } catch (emailError) {
+        console.error('[SECOFRATE] Inquiry saved, but confirmation email failed:', emailError.message);
+      }
+    } else {
+      console.warn('[SECOFRATE] Inquiry saved without email confirmation; configure RESEND_API_KEY and EMAIL_FROM.');
+    }
 
     router.get('/submissions', authenticateToken, requireSecurityLevel(1), auditLog, async (req, res) => {
       try {

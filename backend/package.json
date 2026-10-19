@@ -4,11 +4,16 @@
   "type": "module",
   "description": "Secofrate Investigations - Security & Intelligence Case Management System | Sheria Kwa Wote",
   "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
+    "build": "node scripts/check-build.js",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "db:migrate": "node migrations/run.js",
-    "db:seed": "node migrations/seed.js"
+    "db:seed": "node migrations/seed.js",
+    "db:sync:neon": "node sync-db.js"
   },
   "keywords": [
     "security",
