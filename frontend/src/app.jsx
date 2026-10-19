@@ -24,7 +24,7 @@ function App() {
           style: {
             background: '#1a1a1a',
             color: '#e0e0e0',
-            border: '1px solid #8B0000',
+            border: '1px solid #5b2a86',
           },
         }}
       />

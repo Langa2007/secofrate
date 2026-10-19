@@ -35,11 +35,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-black/95 backdrop-blur-lg border-b border-sic-red/30'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-lg border-b border-sic-gray transition-all duration-300"
     >
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3 flex items-center justify-between flex-wrap gap-4">
         {/* Logo Area */}
@@ -51,7 +47,7 @@ const Navbar = () => {
           />
 
           <div className="hidden sm:block">
-            <div className="font-space font-bold text-sm tracking-[3px] text-white">
+            <div             className="font-space font-bold text-sm tracking-[3px] text-sic-black">
               SECOFRATE
             </div>
             <div className="font-inter text-[10px] tracking-[2px] text-sic-red">
@@ -81,8 +77,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`relative px-4 py-2 text-xs font-bold tracking-[1.5px] transition-all duration-300 flex items-center gap-2 rounded ${
                   isActive
-                    ? 'text-white bg-sic-red/20'
-                    : 'text-sic-silver hover:text-white'
+                      ? 'text-sic-red bg-sic-red/10'
+                      : 'text-sic-silver hover:text-sic-black'
                 }`}
               >
                 <Icon className="text-sm" />

@@ -92,7 +92,7 @@ const Contact = () => {
                     required: 'Name is required',
                     validate: value => (value && value.trim().split(/\s+/).length >= 2) || 'Please provide at least two names'
                   })}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none transition-colors"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none transition-colors"
                   placeholder="Your name as it appears in official records"
                 />
                 {errors.fullName && (
@@ -112,7 +112,7 @@ const Contact = () => {
                       message: 'Invalid email address'
                     }
                   })}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                   placeholder="your email"
                 />
                 {errors.email && (
@@ -126,7 +126,7 @@ const Contact = () => {
                 </label>
                 <input
                   {...register('phone')}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                   placeholder="+254 XXX XXX XXX"
                 />
               </div>
@@ -137,7 +137,7 @@ const Contact = () => {
                 </label>
                 <input
                   {...register('subject', { required: 'Subject is required' })}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none"
                   placeholder="Investigation Inquiry"
                 />
                 {errors.subject && (
@@ -151,7 +151,7 @@ const Contact = () => {
                 </label>
                 <select
                   {...register('urgency')}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black focus:border-sic-red focus:outline-none"
                 >
                   <option value="false">Standard Inquiry</option>
                   <option value="true">Urgent Matter</option>
@@ -165,7 +165,7 @@ const Contact = () => {
                 <textarea
                   {...register('message', { required: 'Message is required' })}
                   rows={6}
-                  className="w-full px-4 py-2 bg-black border border-sic-gray text-white focus:border-sic-red focus:outline-none resize-none"
+                  className="w-full px-4 py-2 bg-white border border-sic-gray text-sic-black placeholder:text-sic-silver focus:border-sic-red focus:outline-none resize-none"
                   placeholder="Provide detailed information about your inquiry..."
                 />
                 {errors.message && (
@@ -176,7 +176,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-sic-red to-red-900 py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-sic-red to-[#32164a] py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
               >
                 <FaLock />
                 {isSubmitting ? 'ENCRYPTING & TRANSMITTING...' : 'ENCRYPT & SEND'}

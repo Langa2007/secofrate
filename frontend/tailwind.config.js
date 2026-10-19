@@ -8,14 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'sic-dark': '#0a0a0a',
+        'sic-dark': '#ffffff',
         'sic-black': '#000000',
-        'sic-charcoal': '#1a1a1a',
-        'sic-red': '#8B0000',
-        'sic-red-glow': '#cc0000',
-        'sic-gold': '#c9a03d',
-        'sic-silver': '#a0a0a0',
-        'sic-gray': '#2a2a2a',
+        'sic-charcoal': '#f6f4fa',
+        'sic-red': '#5b2a86',
+        'sic-red-glow': '#7c3aad',
+        'sic-gold': '#6d4c9a',
+        'sic-silver': '#5f5a68',
+        'sic-gray': '#e3deeb',
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],

@@ -29,9 +29,9 @@ const HeroSection = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-32 pb-12 overflow-hidden bg-gradient-to-br from-sic-black via-[#1b1026] to-[#32164a] text-white">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-radial pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-radial pointer-events-none opacity-40"></div>
       
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 w-full" ref={ref}>
         <motion.div
@@ -51,7 +51,7 @@ const HeroSection = () => {
             <span className="block bg-gradient-to-r from-white to-sic-gold bg-clip-text text-transparent">
               INTELLIGENCE
             </span>
-            <span className="block text-sic-red drop-shadow-[0_0_15px_rgba(139,0,0,0.5)]">
+            <span className="block text-sic-red drop-shadow-[0_0_15px_rgba(91,42,134,0.5)]">
               BEYOND BOUNDARIES
             </span>
           </motion.h1>

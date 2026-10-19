@@ -7,7 +7,7 @@ const CaseTracker = () => {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-r from-sic-dark to-red-950/30 relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-r from-white to-[#f0eafa] relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sic-red/5 via-transparent to-transparent"></div>
       
       <div ref={ref} className="max-w-[1200px] mx-auto relative z-10">

@@ -32,7 +32,7 @@ const AdminLogin = () => {
       >
         <div className="text-center mb-8">
           {/* Logo Placeholder */}
-          <div className="w-20 h-20 bg-gradient-to-br from-sic-red to-red-900 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-sic-gold">
+          <div className="w-20 h-20 bg-gradient-to-br from-sic-red to-[#32164a] rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-sic-gold">
             <FaFingerprint className="text-3xl text-sic-gold" />
           </div>
           <h1 className="text-2xl font-bold">Secofrate Access Portal</h1>
@@ -78,7 +78,7 @@ const AdminLogin = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-sic-red to-red-900 py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
+            className="w-full bg-gradient-to-r from-sic-red to-[#32164a] py-3 font-bold tracking-wider flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-sic-red/20 transition-all disabled:opacity-50"
           >
             <FaFingerprint />
             {loading ? 'VERIFYING...' : 'AUTHENTICATE'}

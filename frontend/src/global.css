@@ -12,8 +12,8 @@
   }
 
   body {
-    background-color: #0a0a0a;
-    color: #e0e0e0;
+    background-color: #ffffff;
+    color: #17131d;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
@@ -25,16 +25,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #1a1a1a;
+    background: #f6f4fa;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #8B0000;
+    background: #5b2a86;
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #cc0000;
+    background: #7c3aad;
   }
 }
 
@@ -47,7 +47,7 @@
     height: 100%;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.03;
+    opacity: 0.012;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
@@ -59,18 +59,18 @@
     height: 100%;
     pointer-events: none;
     z-index: 9998;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 50%);
+    background: linear-gradient(to bottom, transparent 50%, rgba(91, 42, 134, 0.08) 50%);
     background-size: 100% 4px;
     animation: scan 8s linear infinite;
-    opacity: 0.15;
+    opacity: 0.08;
   }
 
   .glow-text {
-    text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+    text-shadow: 0 0 10px rgba(91, 42, 134, 0.5);
   }
 
   .border-glow {
-    box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(91, 42, 134, 0.3);
   }
 
   .card-hover {
@@ -79,8 +79,8 @@
   
   .card-hover:hover {
     transform: translateY(-5px);
-    border-color: #8B0000;
-    box-shadow: 0 10px 30px rgba(139, 0, 0, 0.2);
+    border-color: #5b2a86;
+    box-shadow: 0 10px 30px rgba(91, 42, 134, 0.2);
   }
 }
 
