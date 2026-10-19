@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaExclamationTriangle, FaLock } from 'react-icons/fa'
-import axios from 'axios'
+import api from '../services/api'
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -12,7 +12,7 @@ const Contact = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true)
     try {
-      const response = await axios.post('/api/contact/submit', {
+      const response = await api.post('/contact/submit', {
         full_name: data.fullName,
         email: data.email,
         phone: data.phone,

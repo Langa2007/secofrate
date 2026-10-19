@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+const configuredApiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://secofrate.onrender.com/api'
+const normalizedApiUrl = configuredApiUrl.replace(/\/+$/, '')
+const baseURL = /\/api$/i.test(normalizedApiUrl) ? normalizedApiUrl : `${normalizedApiUrl}/api`
+
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -21,7 +25,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401 && window.location.pathname.startsWith('/admin')) {
+    if (error.response?.status === 401 && typeof window !== 'undefined' && window.location.pathname.startsWith('/admin')) {
       localStorage.removeItem('token')
       window.location.href = '/login'
     }

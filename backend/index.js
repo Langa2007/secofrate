@@ -3,6 +3,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import './config/database.js';
 
 import authRoutes from './routes/authroutes.js';
@@ -10,7 +12,7 @@ import caseRoutes from './routes/caseroutes.js';
 import clientRoutes from './routes/clientroutes.js';
 import contactRoutes from './routes/contactroutes.js';
 
-dotenv.config();
+dotenv.config({ path: join(dirname(fileURLToPath(import.meta.url)), '.env') });
 
 if (!process.env.JWT_SECRET) {
   throw new Error('JWT_SECRET is required. Set it in the Render environment variables.');
@@ -38,14 +40,16 @@ const normalizeOrigin = (value) => {
   }
 };
 
-const allowedOrigins = new Set([
-  'http://localhost:3000',
-  'http://localhost:3001',
-  'http://localhost:5173',
-  'http://localhost:5500',
+const configuredOrigins = [
   ...(process.env.FRONTEND_URL || '').split(','),
   ...(process.env.ADMIN_URL || '').split(','),
-].map(normalizeOrigin).filter(Boolean));
+];
+const localDevelopmentOrigins = process.env.NODE_ENV === 'production'
+  ? []
+  : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173', 'http://localhost:5500'];
+const allowedOrigins = new Set(
+  [...configuredOrigins, ...localDevelopmentOrigins].map(normalizeOrigin).filter(Boolean),
+);
 
 app.use(cors({
   origin: (origin, callback) => {
