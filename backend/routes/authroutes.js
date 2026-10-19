@@ -48,7 +48,8 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign(
       { userId: user.id, username: user.username, security_level: user.security_level },
       process.env.JWT_SECRET,
-      { expiresIn: process.env.JWT_EXPIRE }
+      // Render may not define JWT_EXPIRE; keep token signing valid with a safe default.
+      { expiresIn: process.env.JWT_EXPIRE || '1d' }
     );
 
     res.json({
