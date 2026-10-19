@@ -6,7 +6,6 @@ import {
   FaUserSecret,
   FaMicrochip,
   FaEnvelope,
-  FaFingerprint,
   FaLock,
 } from 'react-icons/fa'
 
@@ -99,13 +98,6 @@ const Navbar = () => {
             )
           })}
 
-          <Link
-            to="/admin/login"
-            className="ml-2 px-4 py-2 text-xs font-bold tracking-[1.5px] flex items-center gap-2 rounded border border-sic-red bg-sic-red/10 hover:bg-sic-red/20 transition-all"
-          >
-            <FaFingerprint />
-            <span className="hidden md:inline">ACCESS</span>
-          </Link>
         </div>
 
         {/* Security Status */}

@@ -17,7 +17,6 @@ const Footer = () => {
     { label: 'About Secofrate', path: '/about' },
     { label: 'All Capabilities', path: '/services' },
     { label: 'Secure Contact', path: '/contact' },
-    { label: 'Admin Access', path: '/admin/login' },
   ]
 
   return (
@@ -61,6 +60,8 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li><Link to="/privacy" className="hover:text-sic-red transition">Privacy Policy</Link></li>
+              <li><Link to="/cookies" className="hover:text-sic-red transition">Cookie Policy</Link></li>
             </ul>
           </div>
 

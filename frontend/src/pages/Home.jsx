@@ -1,7 +1,7 @@
 import React from 'react'
 import HeroSection from '../components/layout/HeroSection'
 import IntelGrid from '../components/home/IntelGrid'
-import CaseTracker from '../components/home/CaseTracker'
+import CompanyOverview from '../components/home/CompanyOverview'
 import ContactTrigger from '../components/home/ContactTrigger'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
@@ -22,7 +22,7 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <div className="mb-4 text-xs font-bold tracking-[3px] text-sic-red">SECURITY PERSONNEL</div>
-            <h2 className="mb-5 max-w-2xl text-3xl font-bold leading-tight text-sic-charcoal md:text-5xl">
+            <h2 className="mb-5 max-w-2xl text-3xl font-bold leading-tight text-black md:text-5xl">
               Professional protection for people, businesses and events.
             </h2>
             <p className="mb-8 max-w-2xl text-base leading-relaxed text-sic-silver md:text-lg">
@@ -31,7 +31,7 @@ const Home = () => {
             <button
               type="button"
               onClick={() => navigate('/contact')}
-              className="inline-flex items-center bg-sic-red px-6 py-3 text-sm font-bold tracking-wide text-white transition-colors hover:bg-sic-charcoal"
+              className="inline-flex items-center bg-sic-red px-6 py-3 text-sm font-bold tracking-wide text-black transition-colors hover:bg-sic-charcoal"
             >
               DISCUSS YOUR SECURITY NEEDS <FaArrowRight className="ml-3" />
             </button>
@@ -62,7 +62,7 @@ const Home = () => {
         </div>
       </section>
       <IntelGrid />
-      <CaseTracker />
+      <CompanyOverview />
       <ContactTrigger />
     </main>
   )

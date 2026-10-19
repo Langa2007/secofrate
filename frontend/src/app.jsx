@@ -9,6 +9,8 @@ import About from './pages/About'
 import Services from './pages/Services'
 import SurveillanceServices from './pages/SurveillanceServices'
 import Contact from './pages/Contact'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import CookiePolicy from './pages/CookiePolicy'
 
 function App() {
   return (
@@ -58,6 +60,20 @@ function App() {
           <>
             <Navbar />
             <Contact />
+            <Footer />
+          </>
+        } />
+        <Route path="/privacy" element={
+          <>
+            <Navbar />
+            <PrivacyPolicy />
+            <Footer />
+          </>
+        } />
+        <Route path="/cookies" element={
+          <>
+            <Navbar />
+            <CookiePolicy />
             <Footer />
           </>
         } />
