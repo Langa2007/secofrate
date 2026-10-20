@@ -20,6 +20,10 @@ if (!process.env.JWT_SECRET) {
 
 const app = express();
 
+// Render terminates requests at its proxy and forwards the client address.
+// Trust the single proxy hop so express-rate-limit can key requests by client IP.
+app.set('trust proxy', 1);
+
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
